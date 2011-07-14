@@ -76,7 +76,11 @@ module RailsAdmin
         #
         # @see RailsAdmin::AbstractModel.properties
         register_instance_option(:label) do
-          abstract_model.model.human_attribute_name name
+          if name.to_s == "_id"
+            "Id"
+          else
+            abstract_model.model.human_attribute_name name
+          end
         end
 
         # Accessor for field's maximum length.
