@@ -17,7 +17,7 @@ module RailsAdmin
         model.respond_to?(:collection) && model.collection.is_a?(::Mongoid::Collection)
       end
 
-      def self.extend(abstract_model)
+      def self.extended(abstract_model)
         abstract_model.model.send(:define_method, :rails_admin_default_object_label_method) do 
           "#{self.class.to_s} ##{self.try :id}"
         end
