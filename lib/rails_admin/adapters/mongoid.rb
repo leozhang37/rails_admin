@@ -154,7 +154,7 @@ module RailsAdmin
                      when "Array"
                        :string
                      else
-                       raise "Need to map field #{field.type.to_s} for field name #{name} in #{model.inspect}"
+											 :string
                      end
 
           {
