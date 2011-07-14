@@ -105,8 +105,8 @@
                   <td class="other left" <% if @other.include? "left" %>style="display: none"<% end %>>
                     <%= link_to("...", other_left, :remote => true) %>
                   </td>
-                  <% properties.map{|property| property.bind(:object, object)}.each do |property| %>
-                    <td class="<%= "#{property.css_class}" %>"><%= [:text, :string].include?(property.type) ? property.formatted_value[0..40] : property.formatted_value %></td>
+                  <% properties.map { |property| property.bind(:object, object) }.each do |property| %>
+                    <td class="<%= "#{property.css_class}" %>"><%= [:text, :string].include?(property.type) ? truncate(property.formatted_value.to_s, :length => 20) : property.formatted_value %></td>
                   <% end %>
                   <% other_right = rails_admin_list_path(params.merge(:model_name => @abstract_model.to_param).reject{|key, value| key == "set"}.merge(:set => params[:set].to_i + 1)) %>
                   <td class="other right" <% if @other.include? "right" %>style="display: none"<% end %>>
