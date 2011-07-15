@@ -25,8 +25,7 @@ module RailsAdmin
           register_instance_option(:html_attributes) do
             {
               :class => "#{css_class} #{has_errors? ? "errorField" : nil}",
-              :cols => 80,
-              :style => "width:#{column_width}px",
+              :style => "width:696px;height:90px;",
               :value => value,
             }
           end
