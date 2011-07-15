@@ -144,7 +144,9 @@ module RailsAdmin
                      when "String"
                        :string
                      when "Integer"
-                       :integer
+                       :integer                     
+                     when "Boolean"
+                       :boolean
                      when "DateTime"
                        :datetime
                      when "Time"
@@ -152,7 +154,7 @@ module RailsAdmin
                      when "Float"
                        :float
                      when "Array"
-                       :string
+                       :array
                      else
 											 :string
                      end
